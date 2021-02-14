@@ -1,24 +1,46 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## RELIER
 
-Things you may want to cover:
+- このアプリケーションは「イベオタ」というものです。
+- オタクの必需品です。
 
-* Ruby version
+## Setup
 
-* System dependencies
+```
+  # dockerのセットアップ方法
 
-* Configuration
+  # コンテナをbuildする
+  docker-compose build
 
-* Database creation
+  # コンテナを起動
+  docker-compose up -d
 
-* Database initialization
+  # DBを作成する
+  docker-compose run web rails db:create db:migrate
+```
 
-* How to run the test suite
+- DBに変更があった場合
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+  # 現在のDBを削除し、DBを再構築する
+  docker-compose run web rails db:migrate:reset
 
-* Deployment instructions
+  # 開発データを投入する
+  docker-compose run web rails db:seed
 
-* ...
+  # Gemfileの変更を取り込む
+  docker-compose build
+```
+
+## サーバアクセス
+
+- サーバのデフォルト値
+
+https://localhost:3000
+
+## 概要
+
+- Ruby 2.7.0
+- Rails 6.1.0
+- MySQL 8系
