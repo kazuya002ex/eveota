@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
   def show
   end
