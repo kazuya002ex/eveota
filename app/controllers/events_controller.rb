@@ -10,6 +10,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.user_id = User.first.id # TODO: ここは違うよ
     if @event.save
       success
     else
@@ -29,7 +30,7 @@ class EventsController < ApplicationController
   private
 
     def event_params
-      params.require(:event).permit(:name, :start_time, :opening_time, :performance_date)
+      params.require(:event).permit(:name, :start_time, :opening_time, :performance_date, :venue_id)
     end
 
     def set_event
