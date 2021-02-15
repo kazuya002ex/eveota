@@ -12,6 +12,6 @@ class CreateEvents < ActiveRecord::Migration[6.1]
     end
 
     add_index :events, :name, unique: true
-    add_index :performance_date
+    add_index :events, :performance_date
   end
 end
