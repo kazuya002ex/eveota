@@ -5,9 +5,16 @@ class EventsController < ApplicationController
   end
 
   def new
+    @event = Event.new
   end
 
   def create
+    @event = Event.new(event_params)
+    if @event.save
+      
+    else
+
+    end
   end
 
   def edit
