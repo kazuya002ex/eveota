@@ -5,6 +5,7 @@ ruby '2.7.2'
 
 gem 'activerecord-import'
 gem 'active_model_serializers'
+gem 'bcrypt'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'jbuilder', '~> 2.7'
 gem 'mysql2', '~> 0.5'
