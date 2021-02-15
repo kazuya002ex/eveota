@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_14_132337) do
+ActiveRecord::Schema.define(version: 2021_02_15_023903) do
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(version: 2021_02_14_132337) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "venues", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false, comment: "会場名"
+    t.string "station", null: false, comment: "最寄り駅名"
+    t.string "location", null: false, comment: "会場の住所"
+    t.integer "walk", limit: 3, null: false, comment: "徒歩時間"
+    t.float "latitude", null: false, comment: "緯度"
+    t.float "longitude", null: false, comment: "経度"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_venues_on_name"
+    t.index ["station"], name: "index_venues_on_station"
   end
 
 end
