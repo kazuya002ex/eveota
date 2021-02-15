@@ -13,7 +13,7 @@ class EventsController < ApplicationController
     if @event.save
       success
     else
-
+      error
     end
   end
 
