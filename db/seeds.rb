@@ -9,6 +9,7 @@ Venue.create!(
   longitude: 139.630767
 )
 
+p 'Venue create パシフィコ横浜'
 Venue.create!(
   name: 'パシフィコ横浜',
   station: 'みなとみらい',
