@@ -1,5 +1,5 @@
 # Venue Create
-p 'Venue create'
+p 'Venue create さいたまスーパーアリーナ'
 Venue.create!(
   name: 'さいたまスーパーアリーナ',
   station: 'さいたま新都心',
