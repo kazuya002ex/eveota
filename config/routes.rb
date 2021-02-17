@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get '/lp', to: 'static_pages#lp'
 
   resources :users, only: [:show, :new, :create, :edit, :update]
+  resources :events
+  resources :venues
 end
